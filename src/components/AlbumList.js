@@ -16,10 +16,14 @@ class AlbumList extends Component {
       .catch((err) => console.log(err));
   }
 
+  renderAlbums() {
+    return this.state.albums.map(album => <Text>{album.title}</Text>);
+  }
+
   render() {
     return (
       <View>
-        <Text>{JSON.stringify(this.state.albums)}</Text>
+        {this.renderAlbums()}
       </View>
     );
   }
